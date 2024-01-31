@@ -7,4 +7,10 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="rojo_cocacola">#fe001a</color>
+    <color name="rojo_cocacola_selected">#D10217</color>
+    <color name="rojo_vino">#8C242F</color>
+    <color name="rojo_cremoso">#D93848</color>
+    <color name="rojo_cafe">#631A21</color>
+    <color name="rojo_cafeblack">#3B0F14</color>
 </resources>

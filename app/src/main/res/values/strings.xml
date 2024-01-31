@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">PrimeraApp</string>
+    <string name="male">Hombre</string>
+    <string name="female">Mujer</string>
+    <string name="heigth">Altura</string>
+    <string name="weight">Peso</string>
 </resources>
