@@ -13,4 +13,11 @@
     <color name="rojo_cremoso">#D93848</color>
     <color name="rojo_cafe">#631A21</color>
     <color name="rojo_cafeblack">#3B0F14</color>
+    <color name="verde_success">#0CFA0C</color>
+    <color name="peso_bajo">#2052CF</color>
+    <color name="peso_normal">#0CF823</color>
+    <color name="peso_sobrepeso">#FF8401</color>
+    <color name="peso_obesidad">#FF0000</color>
+
+
 </resources>

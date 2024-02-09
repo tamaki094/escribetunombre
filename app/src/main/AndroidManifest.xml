@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PrimeraApp">
         <activity
+            android:name=".imccalculator.ResultIMCActivity"
+            android:exported="true" />
+        <activity
             android:name=".imccalculator.ImcCalculatorActivity"
             android:exported="true" />
         <activity

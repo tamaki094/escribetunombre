@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:paddingHorizontal="16dp"
     android:paddingVertical="32dp"
-    android:background="@color/rojo_vino"
+    android:background="@color/rojo_cafeblack"
     tools:context=".imccalculator.ImcCalculatorActivity">
 
 
@@ -115,7 +115,7 @@
                 android:stepSize="1"
                 android:valueFrom="1"
                 android:valueTo="300"
-                android:id="@+id/rsHeigth" />
+                android:id="@+id/rsHeigth"/>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -149,29 +149,31 @@
                 android:id="@+id/txtWeight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:text="0 kg"
+                android:textColor="@color/white"
                 android:textSize="38sp"
                 android:textStyle="bold"
-                android:textColor="@color/white" />
+                tools:text="0 kg" />
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center">
+                android:gravity="center"
+                android:orientation="horizontal">
+
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
                     android:id="@+id/btnSubtractWeight"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="16dp"
-                    android:backgroundTint="@color/rojo_cafe"
-                >
-                </com.google.android.material.floatingactionbutton.FloatingActionButton>
+                    android:backgroundTint="@color/rojo_vino"
+                    android:src="@drawable/ic_substract"></com.google.android.material.floatingactionbutton.FloatingActionButton>
+
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
                     android:id="@+id/btnPlusWeight"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                </com.google.android.material.floatingactionbutton.FloatingActionButton>
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/rojo_vino"
+                    android:src="@drawable/ic_plus"></com.google.android.material.floatingactionbutton.FloatingActionButton>
             </androidx.appcompat.widget.LinearLayoutCompat>
         </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.cardview.widget.CardView>
@@ -184,6 +186,61 @@
         app:layout_constraintStart_toEndOf="@id/vwWeigth"
         app:cardBackgroundColor="@color/rojo_cocacola"
         android:layout_marginTop="32dp"
-        />
+        >
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/age"
+                android:textAllCaps="true"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/txtAge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="38sp"
+                android:textStyle="bold"
+                tools:text="1 año" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btnSubtractAge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:backgroundTint="@color/rojo_vino"
+                    android:src="@drawable/ic_substract"></com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btnPlusAge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/rojo_vino"
+                    android:src="@drawable/ic_plus"></com.google.android.material.floatingactionbutton.FloatingActionButton>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.cardview.widget.CardView>
+    <Button
+        android:id="@+id/btnCalculate"
+        android:layout_width="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/calculate"
+        android:backgroundTint="@color/rojo_cocacola"
+        android:layout_height="80dp"
+    />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
