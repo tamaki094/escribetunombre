@@ -22,4 +22,9 @@
 
     <string name="title_obesidad">Obesidad</string>
     <string name="description_obesidad">Esta muy por encima de lo optimo para tu peso y altura. Puedes morirte, ve al medico</string>
+
+    <string name="categories">Categorias</string>
+    <string name="todo_tasks">Tareas</string>
+
+
 </resources>
