@@ -62,5 +62,5 @@
         android:src="@drawable/ic_plus"
         android:layout_gravity="end|bottom"
         android:layout_margin="32dp"/>
-<!--    nos quedamos en el 8:07:29-->
+
 </FrameLayout>
