@@ -30,4 +30,12 @@
         android:background="@color/rojo_cocacola"
         android:text="ToDo App"/>
 
+    <Button
+        android:id="@+id/btnSuperHero"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@color/rojo_cocacola"
+        android:text="Super Hero App"/>
+
 </LinearLayout>
