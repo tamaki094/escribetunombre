@@ -1,5 +1,6 @@
 package com.tamaki094.primeraapp.superheroapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -8,6 +9,7 @@ import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.tamaki094.primeraapp.R
 import com.tamaki094.primeraapp.databinding.ActivitySuperHeroListBinding
+import com.tamaki094.primeraapp.superheroapp.DetailSuperHeroActivity.Companion.EXTRA_ID
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -44,32 +46,41 @@ class SuperHeroListActivity : AppCompatActivity() {
             }
         })
 
-        adapter = SuperHeroAdapter()
+        adapter = SuperHeroAdapter{superHeroId ->  navigateToDetail(superHeroId)}
         binding.rvSuperHero.setHasFixedSize(true)
         binding.rvSuperHero.layoutManager = LinearLayoutManager(this)
         binding.rvSuperHero.adapter = adapter
     }
 
     private fun searchByName(query: String){
+        Log.i("mensaje", "buscando ${query}")
         binding.progressBar.isVisible = true
         CoroutineScope(Dispatchers.IO).launch {
-            val myResponse = retrofit.create(ApiService::class.java).getSuperHeroes(query)
+            Log.i("mensaje", "consultando en api")
+            try
+            {
+                val myResponse = retrofit.create(ApiService::class.java).getSuperHeroes(query)
+                Log.i("mensaje", "se obtubo clase response")
+                if(myResponse.isSuccessful){
+                    val response:SuperHeroDataResponse? = myResponse.body()
 
-            if(myResponse.isSuccessful){
-                val response:SuperHeroDataResponse? = myResponse.body()
+                    if(response != null){
+                        Log.i("mensaje", response.toString())
+                        runOnUiThread {
+                            adapter.updateList(response.superheroes)
+                            binding.progressBar.isVisible = false
+                        }
 
-                if(response != null){
-                    Log.i("mensaje", response.toString())
-                    runOnUiThread {
-                        adapter.updateList(response.superheroes)
-                        binding.progressBar.isVisible = false
                     }
-
+                    Log.i("mensaje", "funciona :D")
                 }
-                Log.i("mensaje", "funciona :D")
+                else{
+                    Log.i("mensaje", "no funciona :(")
+                }
             }
-            else{
-                Log.i("mensaje", "no funciona :(")
+            catch (e: Exception)
+            {
+                Log.i("mensaje_error", e.toString())
             }
         }
     }
@@ -80,5 +91,11 @@ class SuperHeroListActivity : AppCompatActivity() {
             .baseUrl("https://superheroapi.com/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
+    }
+
+    private fun navigateToDetail(id:String){
+        val intent = Intent(this,DetailSuperHeroActivity::class.java)
+        intent.putExtra(EXTRA_ID, id)
+        startActivity(intent)
     }
 }

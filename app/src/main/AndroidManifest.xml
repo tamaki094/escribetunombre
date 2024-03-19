@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PrimeraApp">
         <activity
+            android:name=".settings.SettingsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".superheroapp.DetailSuperHeroActivity"
+            android:exported="true" />
+        <activity
             android:name=".superheroapp.SuperHeroListActivity"
             android:exported="true" />
         <activity
