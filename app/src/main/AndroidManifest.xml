@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PrimeraApp">
         <activity
+            android:name=".horoscapp.ui.home.HoroscAppMain"
+            android:exported="true" />
+        <activity
             android:name=".settings.SettingsActivity"
             android:exported="true" />
         <activity
